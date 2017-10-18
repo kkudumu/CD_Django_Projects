@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ninja Gold</title>
+</head>
+
+<body>
+    <form action = "/money" method="post">
+        {% csrf_token %}
+    Your Gold: {{request.session.gold}}
+    </form>
+
+    Farm:
+    <form action="/money" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="building" value="farm" />
+        <input type="submit" value="Find Gold!"/>
+      </form>
+    Cave:
+      <form action="/money" method="post">
+        {% csrf_token %}
+          <input type="hidden" name="building" value="cave" />
+          <input type="submit" value="Find Gold!"/>
+        </form>
+    House:
+        <form action="/money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="house" />
+            <input type="submit" value="Find Gold!"/>
+          </form>
+    Casino
+          <form action="/money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="casino" />
+            <input type="submit" value="Find Gold!"/>
+          </form>  
+          
+    <div id ="activities">
+{% if request.session.activities %}
+    {% for x in request.session.activities %}
+        <p>{{x}}</p>
+    {%endfor%}
+{% endif %}
+ 
+        
+    </div>
+
+
+</body>
+
+</html>
+
+
+

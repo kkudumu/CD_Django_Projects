@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Random Word Generator</title>
+    </head>
+    <body>
+        <h1>Random Word(attempt #{{request.session.counter}})</h1>
+        <div class="generator">{{request.session.word}}</div>
+        <a href="/"> Generate </a>
+    </body>
+</html>

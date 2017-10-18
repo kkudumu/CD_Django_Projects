@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Dojo Survey Index</title>
+</head>
+
+<body>
+    <form action="/process" method="post">
+        {% csrf_token %}
+        <p>Your Name:</p> <input type="text" name="name">
+        <p>Dojo Location:</p> <input type="text" name="location">
+        <p>Favorite Language:</p> <input type="text" name="language">
+        <p>Comment:</p> <input type="text" name="comment">
+        <input type="submit" name="submit" value="Submit">
+    </form>
+</body>
+
+</html>
